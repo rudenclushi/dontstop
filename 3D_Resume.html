@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang=“en-US”>
+
+<head>
+ <meta charset = "UTF-8">
+ <title>externalStyle.html</title>
+ <link rel = "stylesheet"
+   type = "text/css"
+   href = "css/3D_resume_styles.css" />
+ <script src="js/angular.min.js"></script>
+
+</head>
+
+<body id="resume" ng-app='my3DResume'>
+
+<div ng-controller="MainController">
+
+	<div class="center">
+	
+		<div class="popup" onclick="popupFunction()">
+		
+			<h1 title=“name” class="highlight">{{ basicinfo.name }}</h1>
+			
+			<span class="popuptext" id="Popup">
+				<div class="popupPropertiesCenter">
+					<img src="mike.jpg" id="profilePic" class="popupPic"></img>
+					<h3>About Mike</h3>
+					<p id="bio">Hi! Thanks for checking out my 3D Resume. I hope you find it helpful and interesting. Try clicking around.</p>
+					<p>DOB: April 15th, 1995 (Age 22) <br />Hometown: Arlington, Massachusetts </p> 
+					<p>Website: <a href="https://medium.com/@mikedrop_415" class="highlight" target="_blank">Medium</a></p>
+				</div>
+			</span>
+		</div>
+	
+		<p title=“Contact_Information”>cell phone: {{contactinfo.phone}} | email: {{contactinfo.email}}</p>
+	</div>
+
+	<div class="left">
+		<div>
+			<h2>Education</h2>
+				<div class="popup" onclick="popupFunction2()">
+					<p class="highlight"><b>{{education.school}}</b></p>
+						<span class="popuptext" id="Popup2">
+							<div class="popupPropertiesLeft">
+								<img src="georgetown.jpg" class="popupPic"></img>
+								<h3>About Georgetown</h3>
+								<p>At Georgetown I did .... ..yada yada yada ... . . </p>
+							</div>
+						</span>
+				</div>
+				<p>{{education.location}}</p>
+			<ul>
+				<li>GPA: {{education.gpa}}</li>
+				<li>Major: {{education.major}}</li>
+				<li>Minors: {{education.minor}}</li>
+			</ul>
+		</div>
+		
+		<h2>Experience</h2>
+		<div id="experience" ng-repeat="experience in experiences">
+			<p><b>{{experience.company}}, </b>{{experience.location}}</p>
+			<p><i>{{experience.title}}</i></p>
+			<ul>
+				<li>{{experience.description1}}</li>
+				<li>{{experience.description2}}</li>
+				<li>{{experience.description3}}</li>
+			</ul>
+		</div>
+			
+		</div>
+		
+		<div id="skills and interests">
+			<h2>Skills and Interests</h2>
+		</div>
+	</div>
+</div>
+</body>
+
+<script src= "js/togglePic.js"></script>
+<script src= "js/app.js"></script>
+<script src="js/controllers/MainController.js"></script>
+
+<! -- Directives -->
+<! -- Popup Function -->
+<script>
+// When the user clicks on <div>, open the popup
+function popupFunction() {
+    var popup = document.getElementById("Popup");
+    popup.classList.toggle("show");	
+}
+</script>
+
+<script>
+// When the user clicks on <div>, open the popup
+function popupFunction2() {
+    var popup = document.getElementById("Popup2");
+    popup.classList.toggle("show");	
+}
+</script>
+
+</html>
