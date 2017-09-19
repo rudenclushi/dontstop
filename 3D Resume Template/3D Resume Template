@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<title> 3D Resume 2 </title>
+	<link rel="stylesheet" type="text/css" href="3DResStyles" /> <!--css file-->
+	<script src="js/angular.min.js"></script>						<!--angular-->
+
+</head>
+
+<body ng-app="my3DResume">
+
+<div ng-controller="MainControllerTemplate">
+
+<div class="limits">
+
+	<div class="popup" onclick="popupFunction('one')">
+
+		<h1 class="highlight"> {{ basicInfo.name }} </h1>
+
+		<span id="one" class="popupContainer popupText">
+
+			<img ng-src="{{ basicInfo.headshot }}" ></img>
+
+			<h3 class="popupTitle"> Basic Info </h3>
+ 
+			<p class="desc"> {{ basicInfo.bio }} </p>
+				
+			<p> DOB: {{ basicInfo.DOB }}</p>
+				
+			<p> Hometown: {{ basicInfo.hometown }}, {{ basicInfo.homestate_abrv }}</p>
+
+		</span>
+	
+	</div>
+
+	<p id="contactInfoLine"> {{ basicInfo.phone }} | {{ basicInfo.email }} </p>
+
+	<div class="left">
+
+		<h2>Education</h2>
+
+		<span class="popup" onclick="popupFunction('two')">
+
+			<p class="highlight spot"> <b>{{ education.school }}</b>, {{education.location}} </p>
+
+			<div id="two" class="popupContainer popupText">
+
+				<img ng-src="{{education.picture}}"></img>
+
+				<h3 class="popupTitle"> {{education.school}} </h3>
+
+				<p class="desc"> {{ education.bio }} </p>
+
+			</div>
+
+		</span>
+
+		<p class="date"> <i> {{ education.date_graduate }} </i> </p>
+
+		<div class="clear">
+
+			<ul>
+
+				<li> Graduation: {{ education.graduation }} </li>
+
+				<li> Majors: {{ education.major }}, Minors: {{ education.minor }}</li>
+
+				<li> GPA: {{ education.gpa }} </li>
+
+			</ul>
+
+		</div>
+
+		<h2>Experience</h2>
+
+		<span class="popup" onclick="popupFunction('three')">
+
+			<p class="highlight spot"><b> {{experience1.organization}}</b>, {{experience1.location}}</p>
+
+			<div id="three" class="popupContainer popupText">
+
+				<img ng-src="{{experience1.picture}}"></img>
+
+				<h3 class="popupTitle"> {{ experience1.title }}</h3>
+
+				<p class="desc"> {{ experience1.bio }} </p>
+
+			</div>
+
+		</span>
+
+		<p class="date"> <i> {{ experience1.date_start }} - {{ experience1.date_end }} </i> </p>
+
+		<div class="clear">
+
+			<ul>
+
+				<li> {{ experience1.desc1 }} </li>
+
+				<li> {{ experience1.desc2 }} </li>
+
+				<li> {{ experience1.desc3 }} </li>
+
+			</ul>
+
+		</div>
+
+		<span class="popup" onclick="popupFunction('four')">
+
+			<p class="highlight spot"><b> {{experience2.organization}}</b>, {{experience2.location}}</p>
+
+			<div id="four" class="popupContainer popupText">
+
+				<img ng-src="{{experience2.picture}}"></img>
+
+				<h3 class="popupTitle"> {{ experience2.title }}</h3>
+
+				<p class="desc"> {{ experience2.bio }} </p>
+
+			</div>
+
+		</span>
+
+		<p class="date"> <i> {{ experience2.date_start }} - {{ experience2.date_end }}</i> </p>
+
+		<div class="clear">
+
+			<ul>
+
+				<li> {{ experience2.desc1 }} </li>
+
+				<li> {{ experience2.desc2 }} </li>
+
+				<li> {{ experience2.desc3 }} </li>
+
+			</ul>
+
+		</div>
+
+		<span class="popup" onclick="popupFunction('five')">
+
+			<p class="highlight spot"><b> {{experience3.organization}}</b>, {{experience3.location}}</p>
+
+			<div id="five" class="popupContainer popupText">
+
+				<img ng-src="{{experience3.picture}}"></img>
+
+				<h3 class="popupTitle"> {{ experience3.title }}</h3>
+
+				<p class="desc"> {{ experience3.bio }} </p>
+
+			</div>
+
+		</span>
+
+		<p class="date"> <i> {{ experience3.date_start }} - {{ experience3.date_end }}</i> </p>
+
+		<div class="clear">
+
+			<ul>
+
+				<li> {{ experience3.desc1 }} </li>
+
+				<li> {{ experience3.desc2 }} </li>
+
+				<li> {{ experience3.desc3 }} </li>
+
+			</ul>
+
+		</div>
+
+		<div class="seeMore" onclick="seeMoreFunction('a','more_a','fewer_a')">
+
+			<p class="highlight_blue" id="more_a"> See More Experiences </p>
+
+			<p class="highlight_blue hide" id="fewer_a"> See Fewer Experiences </p>
+
+			<div id="a" class="seeMoreText">
+
+				<span class="popup" onclick="popupFunction('six')">
+
+					<p class="highlight spot"><b> {{experience4.organization}}</b>, {{experience4.location}}</p>
+
+					<div id="six" class="popupContainer popupText">
+
+						<img ng-src="{{experience4.picture}}"></img>
+
+						<h3 class="popupTitle"> {{ experience4.title }}</h3>
+
+						<p class="desc"> {{ experience4.bio }} </p>
+
+					</div>
+
+				</span>
+
+				<p class="date"> <i> {{ experience4.date_start }} - {{ experience4.date_end }}</i> </p>
+
+				<div class="clear">
+
+					<ul>
+
+						<li> {{ experience4.desc1 }} </li>
+
+						<li> {{ experience4.desc2 }} </li>
+
+						<li> {{ experience4.desc3 }} </li>
+
+					</ul>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+		<p> test </p>
+
+
+
+
+
+
+</div>
+</div>
+</div>
+</body>
+
+<script src= "js/app.js"></script>
+<script src="MainControllerTemplate.js"></script>
+
+<script>
+// When the user clicks on <div>, open the popup
+function popupFunction(number) {
+    var popup = document.getElementById(number);
+    popup.classList.toggle("show");	
+}
+</script>
+
+<script>
+function seeMoreFunction(letter, more_, fewer_) {
+	var seeMore = document.getElementById(letter);
+	seeMore.classList.toggle("show");
+	var more_link = document.getElementById(more_);
+	more_link.classList.toggle("hide");
+	var fewer_link = document.getElementById(fewer_);
+	fewer_link.classList.toggle("hide");
+}
+</script>
+
+<!-- Next steps: 1. Fix the see more popups so that they show up correctly, and 2. Make it so the popups close automatically if you hit 'see fewer experiences' -->
+
+</html>

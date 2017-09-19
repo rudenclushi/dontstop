@@ -1,0 +1,143 @@
+body {
+	background-color: lightgray;
+}
+
+.limits {
+	border-style: solid;
+	border-radius: 10px;
+	padding: 1px;
+	max-width: 65%;
+	margin-left: 17.5%;
+	box-shadow: 10px 10px 5px #888888;
+	background: white;
+}
+
+h1 {
+	text-align: center;
+	line-height: 0%; /* Don't change line height! If you want more space, change padding-top */
+	margin-top: 50px;
+}
+
+h2 { 
+	margin-bottom: 0px;
+}
+
+ul {
+	margin-top: 0px;
+}
+
+.spot {
+	margin-bottom: 0px;
+	margin-top: 0px;
+	float: left;
+}
+
+#contactInfoLine {
+	text-align: center;
+	line-height: 0%; /* Don't change line height! If you want more space, change padding-top */
+	margin-top: 30px;
+	margin-bottom: 50px;
+}
+
+.left {
+	margin-left: 15px;
+}
+
+.date {
+	text-align: right;
+	margin-right: 15px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+.clear {
+	clear: left;
+}
+
+.highlight:hover {
+	color: lightgray;
+	}
+
+.highlight_blue {
+	color: blue;
+	position: relative;
+}
+
+.highlight_blue:hover {
+	color: lightblue;
+	}
+
+/* ALL POPUP STYLING BELOW */
+
+.popupContainer {
+	border: 3px black solid;
+	border-radius: 5px;
+	position: absolute;
+	margin-left: 11.5%;
+	width: 45%;
+	background: white;
+	box-shadow: 10px 10px 5px #888888;
+
+}
+
+.popupContainer img {
+	height: 200px;
+	width: 200px;
+	border-radius: 2px;
+	float: left;
+	padding-right: 10px;
+}
+
+.popupContainer .popupTitle {
+	text-align: center;
+	text-decoration: underline;
+}
+
+.popupContainer p {
+	text-align: left;
+	margin: 0px 0px;
+}
+
+.popupContainer .desc {
+	margin: 10px 10px;
+}
+
+.popupText {
+	visibility: hidden;
+	z-index: 1;
+	text-align: center;
+}
+
+/* popupFunction toggles this class to show the popup */
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 0.25s;
+    animation: fadeIn 0.25s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+}
+
+/* ALL SEE MORE STYLES HERE */
+.seeMoreText {
+	visibility: hidden;
+	position: absolute;
+}
+
+.seeMore .show {
+	visibility: visible;
+	position: relative;
+}
+
+.seeMore .hide {
+	visibility: hidden;
+	position: absolute;
+}
